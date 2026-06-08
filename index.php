@@ -5,6 +5,8 @@ $ch = curl_init(Api_Url);
 
 //  Recibir el estado de la petición y no mostrarlo en pantalla
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// Evitar que el contenedor de Render bloquee la petición por certificados SSL
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
 /* Ejecutar la petición 
 y guardamos el resultado*/

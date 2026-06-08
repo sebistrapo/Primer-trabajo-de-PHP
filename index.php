@@ -8,6 +8,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 // Evitar que el contenedor de Render bloquee la petición por certificados SSL
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
+//  Identifica la dirección para que no la bloquee
+curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
 /* Ejecutar la petición 
 y guardamos el resultado*/
 $resultApi = curl_exec($ch);
